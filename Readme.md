@@ -1,6 +1,9 @@
-﻿# LibRHash4P
+﻿
+# LibRHash4P
 
 LibRHash for Pascal (Lazarus + Delphi).
+
+<https://github.com/rhash/RHash>
 
 ## DLL / SO
 
@@ -17,8 +20,6 @@ Demo application on Linux
 Demo application on Windows
 
 ![Demo on Windows](librhash4p_windows.png)
-
-
 
 ## Changelog
 
