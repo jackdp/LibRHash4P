@@ -1,0 +1,244 @@
+object FormMain: TFormMain
+  Left = 363
+  Height = 586
+  Top = 250
+  Width = 864
+  AllowDropFiles = True
+  Caption = 'FormMain'
+  ClientHeight = 586
+  ClientWidth = 864
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDropFiles = FormDropFiles
+  LCLVersion = '2.0.7.0'
+  object edLib: TLabeledEdit
+    Left = 15
+    Height = 23
+    Top = 24
+    Width = 756
+    Anchors = [akTop, akLeft, akRight]
+    EditLabel.Height = 15
+    EditLabel.Width = 756
+    EditLabel.Caption = 'Library file (DLL/SO):'
+    EditLabel.ParentColor = False
+    LabelSpacing = 1
+    TabOrder = 0
+    Text = 'edLib'
+  end
+  object me: TMemo
+    Left = 8
+    Height = 336
+    Top = 200
+    Width = 847
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    Font.Height = -12
+    Font.Name = 'Fira Mono'
+    Lines.Strings = (
+      'me'
+    )
+    ParentFont = False
+    ScrollBars = ssAutoBoth
+    TabOrder = 11
+  end
+  object btnHashCount: TButton
+    Left = 16
+    Height = 25
+    Top = 144
+    Width = 80
+    Caption = 'Hash count'
+    OnClick = btnHashCountClick
+    TabOrder = 7
+  end
+  object btnHashNames: TButton
+    Left = 105
+    Height = 25
+    Top = 144
+    Width = 124
+    Caption = 'Show hash names'
+    OnClick = btnHashNamesClick
+    TabOrder = 8
+  end
+  object btnHashesInfo: TButton
+    Left = 238
+    Height = 25
+    Top = 144
+    Width = 128
+    Caption = 'Show hashes info'
+    OnClick = btnHashesInfoClick
+    TabOrder = 9
+  end
+  object btnHashFile: TButton
+    Left = 16
+    Height = 25
+    Top = 102
+    Width = 104
+    Caption = 'Hash file'
+    Font.Height = -13
+    Font.Style = [fsBold]
+    OnClick = btnHashFileClick
+    ParentFont = False
+    TabOrder = 4
+  end
+  object pnBottom: TPanel
+    Left = 0
+    Height = 48
+    Top = 538
+    Width = 864
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 48
+    ClientWidth = 864
+    TabOrder = 10
+    object lblProgress: TLabel
+      Left = 8
+      Height = 15
+      Top = 6
+      Width = 97
+      Caption = 'File hash progress:'
+      ParentColor = False
+    end
+    object pb: TProgressBar
+      Left = 6
+      Height = 20
+      Top = 24
+      Width = 852
+      Anchors = [akTop, akLeft, akRight]
+      TabOrder = 0
+    end
+  end
+  object btnAbort: TButton
+    Left = 128
+    Height = 25
+    Top = 102
+    Width = 75
+    Caption = 'Abort'
+    Font.Height = -13
+    Font.Style = [fsBold]
+    OnClick = btnAbortClick
+    ParentFont = False
+    TabOrder = 5
+    Visible = False
+  end
+  object pnHashType: TPanel
+    Left = 408
+    Height = 90
+    Top = 102
+    Width = 258
+    ClientHeight = 90
+    ClientWidth = 258
+    ParentColor = False
+    TabOrder = 6
+    object rbCrc32: TRadioButton
+      Left = 11
+      Height = 19
+      Top = 24
+      Width = 55
+      Caption = 'CRC32'
+      TabOrder = 6
+    end
+    object rbMd5: TRadioButton
+      Left = 11
+      Height = 19
+      Top = 43
+      Width = 45
+      Caption = 'MD5'
+      TabOrder = 0
+    end
+    object rbSha1: TRadioButton
+      Left = 11
+      Height = 19
+      Top = 62
+      Width = 54
+      Caption = 'SHA-1'
+      Checked = True
+      TabOrder = 1
+      TabStop = True
+    end
+    object rbSha2_256: TRadioButton
+      Left = 80
+      Height = 19
+      Top = 24
+      Width = 72
+      Caption = 'SHA2-256'
+      TabOrder = 2
+    end
+    object rbSha2_512: TRadioButton
+      Left = 80
+      Height = 19
+      Top = 43
+      Width = 72
+      Caption = 'SHA2-512'
+      TabOrder = 3
+    end
+    object Label1: TLabel
+      Left = 8
+      Height = 15
+      Top = 6
+      Width = 139
+      Caption = 'Select a hash to calculate'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object rbSha3_256: TRadioButton
+      Left = 168
+      Height = 19
+      Top = 24
+      Width = 72
+      Caption = 'SHA3-256'
+      TabOrder = 4
+    end
+    object rbSha3_512: TRadioButton
+      Left = 168
+      Height = 19
+      Top = 43
+      Width = 72
+      Caption = 'SHA3-512'
+      TabOrder = 5
+    end
+  end
+  object edFile: TLabeledEdit
+    Left = 16
+    Height = 23
+    Top = 69
+    Width = 756
+    Anchors = [akTop, akLeft, akRight]
+    EditLabel.Height = 15
+    EditLabel.Width = 756
+    EditLabel.Caption = 'File to hash:'
+    EditLabel.ParentColor = False
+    LabelSpacing = 1
+    TabOrder = 2
+    Text = 'edFile'
+  end
+  object btnBrowseFile: TButton
+    Left = 780
+    Height = 25
+    Top = 68
+    Width = 75
+    Anchors = [akTop, akRight]
+    Caption = 'Browse...'
+    OnClick = btnBrowseFileClick
+    TabOrder = 3
+  end
+  object btnBrowseLib: TButton
+    Left = 780
+    Height = 25
+    Top = 23
+    Width = 75
+    Anchors = [akTop, akRight]
+    Caption = 'Browse...'
+    OnClick = btnBrowseLibClick
+    TabOrder = 1
+  end
+  object dlgOpenFile: TOpenDialog
+    Filter = 'All files|*'
+    Left = 704
+    Top = 128
+  end
+  object dlgOpenLib: TOpenDialog
+    Filter = 'DLL files|*.dll|All files|*.*'
+    Left = 792
+    Top = 128
+  end
+end
