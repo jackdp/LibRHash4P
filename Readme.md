@@ -19,7 +19,7 @@ LibRHash4P consists of two main files:
 1. `librhash.pas` - pascal unit that imports all functions from the LibRHash library.
 2. `rhash4p.pas` - unit with the **TRHashFile** class for hashing files, and several helpful functions.
 
-In the repository you can also find a [demonstration program](./tree/master/demo) and compiled [32 and 64-bit libraries](./tree/master/bin/librhash_1.3.8) for Windows (**DLL** files) and Linux (**SO** files).
+In the repository you can also find a [demonstration program](https://github.com/jackdp/LibRHash4P/tree/master/demo) and compiled [32 and 64-bit libraries](https://github.com/jackdp/LibRHash4P/tree/master/bin/librhash_1.3.8) for Windows (**DLL** files) and Linux (**SO** files).
 
 Most libraries are compiled in two versions: with `-O2` and `-O3` optimization enabled. Libraries compiled with `-O3` optimization should generally be slightly faster, but in some special situations they may be slower. In general, you should test the "O2" and "O3" libraries and choose the best one for your needs.
 
