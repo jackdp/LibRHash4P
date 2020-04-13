@@ -184,7 +184,7 @@ begin
     rhtEdonr512: Result := RHASH_EDONR512;
     rhtSnefru128: Result := RHASH_SNEFRU128;
     rhtSnefru256: Result := RHASH_SNEFRU256;
-  {$IFDEF DCC}
+  {$IFNDEF FPC}
   else
     Result := RHASH_CRC32;
   {$ENDIF}
@@ -472,7 +472,7 @@ end;
   {$endregion TRHashFile.CalcFileHash}
 
 function TRHashFile.CheckLib: Boolean;
-{$IFDEF DCC}
+{$IFNDEF FPC}
 const NilHandle = 0;
 {$ENDIF}
 begin
